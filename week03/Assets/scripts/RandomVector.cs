@@ -14,18 +14,12 @@ public class RandomVector : MonoBehaviour {
 
 		// set a new destination
 		if ( Time.time > lastTimeWhenIMoved + 1f ) { // wait 1 second
-			myDestination = new Vector3( Random.Range( -2f, 2f), 
-										 Random.Range(-2f, 2f), 
-										 Random.Range(-2f, 4.20f) 
-									   );
+			myDestination = new Vector3( Random.Range( -2f, 2f), Random.Range(-2f, 2f), Random.Range(-2f, 4.20f) );
 			lastTimeWhenIMoved = Time.time; // update last time when I moved
 		}
 
 		// ok let's actually move now
-		transform.position = Vector3.MoveTowards( transform.position,
-												  myDestination,
-												  Time.deltaTime * speed
-												);
+		transform.position = Vector3.MoveTowards( transform.position, myDestination, Time.deltaTime * speed );
 
 	} // end of Update()
 }
