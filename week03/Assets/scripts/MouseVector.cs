@@ -18,5 +18,13 @@ public class MouseVector : MonoBehaviour {
 
 		// move object, but ON TOP of previous position
 		transform.position += new Vector3( mouseX, 0f, mouseY );
+
+		// clamp position inside an area
+		transform.position = new Vector3( 
+			Mathf.Clamp( transform.position.x, -5f, 5f), 
+			transform.position.y, 
+			Mathf.Clamp( transform.position.z, -5f, 5f) 
+		);
+
 	}
 }

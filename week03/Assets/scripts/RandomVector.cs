@@ -19,7 +19,12 @@ public class RandomVector : MonoBehaviour {
 		}
 
 		// ok let's actually move now
-		transform.position = Vector3.MoveTowards( transform.position, myDestination, Time.deltaTime * speed );
+		// transform.position = Vector3.MoveTowards( transform.position, myDestination, Time.deltaTime * speed );
+		// 9/23: commented out because it's not smooth enough  -Robert
+
+		// new movement to make it smoother: "lerp"
+		transform.position = Vector3.Lerp( transform.position, myDestination, 0.1f );
+
 
 	} // end of Update()
 }
